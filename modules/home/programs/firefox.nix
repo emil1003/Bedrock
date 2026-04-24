@@ -1,0 +1,52 @@
+{
+  flake.homeModules."firefox" =
+    { pkgs, ... }:
+    {
+      programs.firefox = {
+        enable = true;
+        profiles."Personal" = {
+          id = 0;
+
+          containers = {
+            "Incognito" = {
+              color = "purple";
+              icon = "fingerprint";
+              id = 0;
+            };
+          };
+
+          search = {
+            default = "ddg";
+            force = true;
+            engines = {
+              "nix-packages" = {
+                name = "Nix Packages";
+                urls = [
+                  {
+                    template = "https://search.nixos.org/packages?channel=unstable&query={searchTerms}";
+                  }
+                ];
+
+                icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
+                definedAliases = [ "@nix" ];
+              };
+
+              "nixos-options" = {
+                name = "NixOS Options";
+                urls = [
+                  {
+                    template = "https://search.nixos.org/options?channel=unstable&query={searchTerms}";
+                  }
+                ];
+
+                icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
+                definedAliases = [ "@nixos" ];
+              };
+            };
+          };
+        };
+      };
+
+      home.packages = [ pkgs.firefox-gnome-theme ];
+    };
+}
