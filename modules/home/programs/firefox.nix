@@ -11,7 +11,7 @@
             "Incognito" = {
               color = "purple";
               icon = "fingerprint";
-              id = 0;
+              id = 1;
             };
           };
 
