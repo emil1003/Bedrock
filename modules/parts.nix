@@ -5,9 +5,5 @@
     nixvim.flakeModules.default
   ];
 
-  nixvim = {
-    packages.enable = true;
-  };
-
   systems = [ "x86_64-linux" ];
 }

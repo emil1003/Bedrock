@@ -41,8 +41,6 @@
         ++ (withSystem pkgs.stdenv.hostPlatform.system (
           { config, ... }:
           [
-            # Nixvim-created package
-            config.packages.neovim
             config.packages."with"
           ]
         ));

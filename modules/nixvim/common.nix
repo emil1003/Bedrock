@@ -11,16 +11,6 @@
       };
 
       config = {
-        colorschemes = {
-          everforest = {
-            enable = true;
-            settings = {
-              background = "hard";
-              transparent_background = 2;
-            };
-          };
-        };
-
         globals = {
           mapleader = " ";
           maplocalleader = " ";
