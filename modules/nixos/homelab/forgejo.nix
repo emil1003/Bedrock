@@ -23,7 +23,7 @@
         {
           services = {
             caddy.virtualHosts.${cfg.domain} = mkIf cfg.proxy {
-              useACMEHost = homelab.domain;
+              useACMEHost = homelab.baseDomain;
               extraConfig =
                 let
                   port = config.services.forgejo.settings.server.HTTP_PORT;
