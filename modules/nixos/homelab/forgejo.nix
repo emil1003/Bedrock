@@ -38,10 +38,6 @@
 
               user = homelab.user;
               group = homelab.group;
-
-              database = {
-                type = if config.services.postgresql.enable then "postgresql" else "sqlite3";
-              };
             };
           };
         };
