@@ -38,6 +38,12 @@
 
               user = homelab.user;
               group = homelab.group;
+
+              settings = {
+                server = {
+                  ROOT_URL = "https://${cfg.domain}";
+                };
+              };
             };
           };
         };
