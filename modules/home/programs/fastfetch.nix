@@ -54,9 +54,9 @@
             "break"
           ];
         };
-      };
 
-      # Use minimal package for smaller derivation
-      package = mkDefault pkgs.fastfetch.minimal;
+        # Use minimal package for smaller derivation
+        package = mkDefault pkgs.fastfetch.minimal;
+      };
     };
 }
