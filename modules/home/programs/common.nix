@@ -12,10 +12,6 @@
       # Programs with additional config
       # (which don't warrant separate module)
       programs = {
-        bash = {
-          enable = true;
-        };
-
         btop = {
           enable = true;
           settings = {
@@ -26,8 +22,6 @@
 
         nh = {
           enable = true;
-          # Opinionated config flake path
-          flake = mkDefault "${config.home.homeDirectory}/Flake";
         };
       };
 
@@ -35,6 +29,7 @@
       home.packages =
         with pkgs;
         [
+          file
           jq
         ]
         # Flake-defined packages
