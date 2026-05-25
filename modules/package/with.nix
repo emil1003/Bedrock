@@ -30,6 +30,14 @@
           # Forward any remaining user‑supplied arguments
           CMD+=("$@")
 
+          if [[ -n "''${WITH_PACKAGES:-}" ]]; then
+            WITH_PACKAGES="''${WITH_PACKAGES}, ''${PACKAGE}"
+          else
+            WITH_PACKAGES="''${PACKAGE}"
+          fi
+
+          export WITH_PACKAGES
+
           # Replace the wrapper with the actual nix shell
           exec "''${CMD[@]}"
         '';
