@@ -56,7 +56,7 @@
         };
 
         # Use minimal package for smaller derivation
-        package = mkDefault pkgs.fastfetch.minimal;
+        package = mkDefault pkgs.fastfetch-unwrapped;
       };
     };
 }
