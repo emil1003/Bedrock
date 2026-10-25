@@ -23,8 +23,6 @@
 
           timeout = mkDefault 0;
         };
-
-        initrd.systemd.enable = true;
       };
 
       # Latest kernel
